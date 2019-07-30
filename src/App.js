@@ -1,6 +1,9 @@
 import React, { Component} from 'react';
 import './App.css';
 import Todos from './components/Todos';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Contact from './components/Contact';
+import About from './components/About';
 
 class App extends Component {
   state = {
@@ -28,7 +31,14 @@ render() {
       <header className="App-header">
        le routage
       </header>
-      <Todos  todos={this.state.todos}/>
+      <Router>
+      {/* <Todos  todos={this.state.todos}/> */}
+      <Route path="/todos" render={() => (
+        <Todos todos={this.state.todos}/>
+      )} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      </Router>
     </div>
   );
 }
