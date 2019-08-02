@@ -30,12 +30,28 @@ render() {
   return (
     <div className="App">
       <Router>
-        <header className="App-header">
-        le routage
-        <Link to={'/todos'}>To do list</Link>
-        <Link to={'/about'}>A propos</Link>
-        <Link to={'/contact'}>Contact</Link>
-        </header>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+            <Link className="nav-link" to={'/todos'}>To do list</Link>
+            </li>
+            <li className="nav-item">
+            <Link className="nav-link" to={'/about'}>A propos</Link>
+            </li>
+            <li className="nav-item">
+            <Link className="nav-link" to={'/contact'}>Contact</Link>
+            </li>
+          </ul>
+          <span className="navbar-text">
+          <p className="navbar-brand mb-0 h1">LE ROUTAGE</p>
+          </span>
+        </div>
+      </nav>
+
         {/* <Todos  todos={this.state.todos}/> */}
         <Route exact path="/todos" render={() => (
           <Todos todos={this.state.todos}/>
