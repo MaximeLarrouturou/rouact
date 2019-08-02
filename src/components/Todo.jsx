@@ -5,7 +5,7 @@ const Todo = ({todo}) => {
   return (
     <li className="todo">{todo.title}
         <br></br>
-          <Link to={`/todos/${todo.id}`}>details…</Link>
+          <Link to={`/todos/${todo.id}`} className="todo-link">details…</Link>
     </li>
 
   );
